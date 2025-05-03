@@ -46,36 +46,6 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
-  }
 }
 
 @layer base {
@@ -94,12 +64,22 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-poppins;
   }
+  
+  /* Theme-specific styles */
+  body.dark {
+    @apply bg-gray-900 text-white;
+  }
+  
+  body.creative {
+    @apply bg-white text-gray-900;
+  }
 }
 
+/* Animation classes */
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .reveal.active {
@@ -107,6 +87,7 @@
   transform: translateY(0);
 }
 
+/* Theme-specific animation timing */
 .delay-100 {
   transition-delay: 100ms;
 }
@@ -121,4 +102,53 @@
 
 .delay-400 {
   transition-delay: 400ms;
+}
+
+/* Scroll-triggered animations */
+.about-reveal,
+.project-reveal,
+.experience-reveal,
+.contact-reveal,
+.skill-reveal,
+.testimonial-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-reveal.active,
+.project-reveal.active,
+.experience-reveal.active,
+.contact-reveal.active,
+.skill-reveal.active,
+.testimonial-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Parallax effect */
+.parallax {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.8, 1);
+}
+
+/* Animations for the hero section */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Improved skill bar animation */
+.skill-bar-fill {
+  width: 0;
+  transition: width 1s cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }

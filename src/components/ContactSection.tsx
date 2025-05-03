@@ -1,12 +1,30 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import SocialLinks from './SocialLinks';
+import { useTheme } from '@/utils/themeContext';
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection: React.FC = () => {
+  const { theme } = useTheme();
+  const { toast } = useToast();
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,49 +47,167 @@ const ContactSection: React.FC = () => {
   
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted");
-    // Could add toast notification here
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      console.log("Form submitted:", formData);
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+        variant: "default",
+      });
+      
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+    }, 1500);
   };
 
   return (
-    <section id="contact" className="py-24 px-6 bg-portfolio-lightGray">
+    <section 
+      id="contact" 
+      className={`py-24 px-6 ${
+        theme === 'dark' 
+          ? 'bg-gray-800 text-white' 
+          : theme === 'creative' 
+            ? 'bg-white' 
+            : 'bg-portfolio-lightGray'
+      }`}
+    >
       <div className="max-w-screen-xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-portfolio-navy contact-reveal">
-          <span className="text-portfolio-teal">04.</span> Get In Touch
+        <h2 className={`text-3xl md:text-4xl font-bold mb-6 contact-reveal ${
+          theme === 'dark' 
+            ? 'text-white' 
+            : theme === 'creative' 
+              ? 'text-indigo-600' 
+              : 'text-portfolio-navy'
+        }`}>
+          <span className={
+            theme === 'dark' 
+              ? 'text-teal-400' 
+              : theme === 'creative' 
+                ? 'text-fuchsia-500' 
+                : 'text-portfolio-teal'
+          }>05.</span> Get In Touch
         </h2>
         
-        <p className="text-lg text-portfolio-slate max-w-3xl mb-12 contact-reveal">
+        <p className={`text-lg max-w-3xl mb-12 contact-reveal ${
+          theme === 'dark' 
+            ? 'text-gray-300' 
+            : theme === 'creative' 
+              ? 'text-gray-700' 
+              : 'text-portfolio-slate'
+        }`}>
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!
         </p>
         
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/2 contact-reveal">
-            <div className="bg-white p-8 rounded-lg shadow-md">
-              <h3 className="text-2xl font-bold text-portfolio-navy mb-6">Send a Message</h3>
+            <div className={`p-8 rounded-lg shadow-md ${
+              theme === 'dark' 
+                ? 'bg-gray-900' 
+                : theme === 'creative' 
+                  ? 'bg-white shadow-purple-200/50' 
+                  : 'bg-white'
+            }`}>
+              <h3 className={`text-2xl font-bold mb-6 ${
+                theme === 'dark' 
+                  ? 'text-white' 
+                  : theme === 'creative' 
+                    ? 'text-indigo-700' 
+                    : 'text-portfolio-navy'
+              }`}>Send a Message</h3>
               
               <form onSubmit={handleSubmit}>
                 <div className="space-y-4">
                   <div>
-                    <Input placeholder="Your Name" className="border-portfolio-teal/30 focus:border-portfolio-teal" />
+                    <Input 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your Name" 
+                      className={
+                        theme === 'dark' 
+                          ? 'bg-gray-800 border-gray-700 text-white focus:border-teal-500' 
+                          : theme === 'creative' 
+                            ? 'border-indigo-200 focus:border-fuchsia-400' 
+                            : 'border-portfolio-teal/30 focus:border-portfolio-teal'
+                      } 
+                      required
+                    />
                   </div>
                   <div>
-                    <Input type="email" placeholder="Your Email" className="border-portfolio-teal/30 focus:border-portfolio-teal" />
+                    <Input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="Your Email" 
+                      className={
+                        theme === 'dark' 
+                          ? 'bg-gray-800 border-gray-700 text-white focus:border-teal-500' 
+                          : theme === 'creative' 
+                            ? 'border-indigo-200 focus:border-fuchsia-400' 
+                            : 'border-portfolio-teal/30 focus:border-portfolio-teal'
+                      } 
+                      required
+                    />
                   </div>
                   <div>
-                    <Input placeholder="Subject" className="border-portfolio-teal/30 focus:border-portfolio-teal" />
+                    <Input 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      placeholder="Subject" 
+                      className={
+                        theme === 'dark' 
+                          ? 'bg-gray-800 border-gray-700 text-white focus:border-teal-500' 
+                          : theme === 'creative' 
+                            ? 'border-indigo-200 focus:border-fuchsia-400' 
+                            : 'border-portfolio-teal/30 focus:border-portfolio-teal'
+                      } 
+                      required
+                    />
                   </div>
                   <div>
                     <Textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Your Message" 
-                      className="min-h-[150px] border-portfolio-teal/30 focus:border-portfolio-teal"
+                      className={`min-h-[150px] ${
+                        theme === 'dark' 
+                          ? 'bg-gray-800 border-gray-700 text-white focus:border-teal-500' 
+                          : theme === 'creative' 
+                            ? 'border-indigo-200 focus:border-fuchsia-400' 
+                            : 'border-portfolio-teal/30 focus:border-portfolio-teal'
+                      }`} 
+                      required
                     />
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-portfolio-teal text-portfolio-navy hover:bg-opacity-80"
+                    className={`w-full ${
+                      theme === 'dark' 
+                        ? 'bg-teal-500 text-gray-900 hover:bg-teal-400' 
+                        : theme === 'creative' 
+                          ? 'bg-gradient-to-r from-fuchsia-500 to-indigo-500 text-white hover:bg-opacity-90' 
+                          : 'bg-portfolio-teal text-portfolio-navy hover:bg-opacity-80'
+                    }`}
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? 
+                      'Sending...' : 
+                      <span className="flex items-center justify-center">
+                        Send Message
+                        <Send size={16} className="ml-2" />
+                      </span>
+                    }
                   </Button>
                 </div>
               </form>
@@ -79,43 +215,121 @@ const ContactSection: React.FC = () => {
           </div>
           
           <div className="lg:w-1/2">
-            <div className="bg-white p-8 rounded-lg shadow-md h-full contact-reveal">
-              <h3 className="text-2xl font-bold text-portfolio-navy mb-6">Contact Information</h3>
+            <div className={`p-8 rounded-lg shadow-md h-full contact-reveal ${
+              theme === 'dark' 
+                ? 'bg-gray-900' 
+                : theme === 'creative' 
+                  ? 'bg-white shadow-purple-200/50' 
+                  : 'bg-white'
+            }`}>
+              <h3 className={`text-2xl font-bold mb-6 ${
+                theme === 'dark' 
+                  ? 'text-white' 
+                  : theme === 'creative' 
+                    ? 'text-indigo-700' 
+                    : 'text-portfolio-navy'
+              }`}>Contact Information</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <Mail className="text-portfolio-teal mt-1 mr-4" size={20} />
+                  <Mail className={
+                    theme === 'dark' 
+                      ? 'text-teal-400 mt-1 mr-4' 
+                      : theme === 'creative' 
+                        ? 'text-fuchsia-500 mt-1 mr-4' 
+                        : 'text-portfolio-teal mt-1 mr-4'
+                  } size={20} />
                   <div>
-                    <h4 className="font-medium text-portfolio-navy">Email</h4>
-                    <a href="mailto:hello@example.com" className="text-portfolio-slate hover:text-portfolio-teal transition-colors">
-                      hello@example.com
+                    <h4 className={`font-medium ${
+                      theme === 'dark' 
+                        ? 'text-white' 
+                        : theme === 'creative' 
+                          ? 'text-indigo-700' 
+                          : 'text-portfolio-navy'
+                    }`}>Email</h4>
+                    <a 
+                      href="mailto:hello@lokeshsoni.com" 
+                      className={`${
+                        theme === 'dark' 
+                          ? 'text-gray-300 hover:text-teal-400' 
+                          : theme === 'creative' 
+                            ? 'text-gray-700 hover:text-fuchsia-600' 
+                            : 'text-portfolio-slate hover:text-portfolio-teal'
+                      } transition-colors`}
+                    >
+                      hello@lokeshsoni.com
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <Phone className="text-portfolio-teal mt-1 mr-4" size={20} />
+                  <Phone className={
+                    theme === 'dark' 
+                      ? 'text-teal-400 mt-1 mr-4' 
+                      : theme === 'creative' 
+                        ? 'text-fuchsia-500 mt-1 mr-4' 
+                        : 'text-portfolio-teal mt-1 mr-4'
+                  } size={20} />
                   <div>
-                    <h4 className="font-medium text-portfolio-navy">Phone</h4>
-                    <a href="tel:+1234567890" className="text-portfolio-slate hover:text-portfolio-teal transition-colors">
+                    <h4 className={`font-medium ${
+                      theme === 'dark' 
+                        ? 'text-white' 
+                        : theme === 'creative' 
+                          ? 'text-indigo-700' 
+                          : 'text-portfolio-navy'
+                    }`}>Phone</h4>
+                    <a 
+                      href="tel:+1234567890" 
+                      className={`${
+                        theme === 'dark' 
+                          ? 'text-gray-300 hover:text-teal-400' 
+                          : theme === 'creative' 
+                            ? 'text-gray-700 hover:text-fuchsia-600' 
+                            : 'text-portfolio-slate hover:text-portfolio-teal'
+                      } transition-colors`}
+                    >
                       +1 (234) 567-890
                     </a>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <MapPin className="text-portfolio-teal mt-1 mr-4" size={20} />
+                  <MapPin className={
+                    theme === 'dark' 
+                      ? 'text-teal-400 mt-1 mr-4' 
+                      : theme === 'creative' 
+                        ? 'text-fuchsia-500 mt-1 mr-4' 
+                        : 'text-portfolio-teal mt-1 mr-4'
+                  } size={20} />
                   <div>
-                    <h4 className="font-medium text-portfolio-navy">Location</h4>
-                    <p className="text-portfolio-slate">
+                    <h4 className={`font-medium ${
+                      theme === 'dark' 
+                        ? 'text-white' 
+                        : theme === 'creative' 
+                          ? 'text-indigo-700' 
+                          : 'text-portfolio-navy'
+                    }`}>Location</h4>
+                    <p className={
+                      theme === 'dark' 
+                        ? 'text-gray-300' 
+                        : theme === 'creative' 
+                          ? 'text-gray-700' 
+                          : 'text-portfolio-slate'
+                    }>
                       San Francisco, California, USA
                     </p>
                   </div>
                 </div>
                 
                 <div className="pt-8">
-                  <h4 className="font-medium text-portfolio-navy mb-4">Connect with me</h4>
-                  <SocialLinks />
+                  <h4 className={`font-medium mb-4 ${
+                    theme === 'dark' 
+                      ? 'text-white' 
+                      : theme === 'creative' 
+                        ? 'text-indigo-700' 
+                        : 'text-portfolio-navy'
+                  }`}>Connect with me</h4>
+                  <SocialLinks theme={theme} />
                 </div>
               </div>
             </div>
