@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Github, Linkedin, Twitter, Instagram, Globe } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
 
 interface SocialLinksProps {
   className?: string;
@@ -27,11 +27,9 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
   };
 
   const socialLinks = [
-    { icon: <Github size={iconSize} />, url: "https://github.com/lokeshsoni", label: "GitHub" },
-    { icon: <Linkedin size={iconSize} />, url: "https://linkedin.com/in/lokeshsoni", label: "LinkedIn" },
-    { icon: <Twitter size={iconSize} />, url: "https://twitter.com/lokeshsoni", label: "Twitter" },
-    { icon: <Instagram size={iconSize} />, url: "https://instagram.com/lokeshsoni.dev", label: "Instagram" },
-    { icon: <Globe size={iconSize} />, url: "https://lokeshsoni.com", label: "Website" },
+    { icon: <Github size={iconSize} />, url: "https://github.com/lokeshsoni1/", label: "GitHub" },
+    { icon: <Linkedin size={iconSize} />, url: "https://www.linkedin.com/in/lokesh-soni-2b3b7034a/", label: "LinkedIn" },
+    { icon: <Instagram size={iconSize} />, url: "https://www.instagram.com/lokesh.soni194/", label: "Instagram" },
   ];
 
   return (

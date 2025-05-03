@@ -44,7 +44,7 @@ const Index: React.FC = () => {
         <ScrollToTop />
         <Toaster />
         
-        <style jsx global>
+        <style>
           {`
           /* Common animation styles */
           .typing-text {

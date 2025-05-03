@@ -28,8 +28,8 @@ const AboutSection: React.FC = () => {
 
   const skills = [
     "HTML", "CSS", "JavaScript", "React", 
-    "Next.js", "Tailwind CSS", "Node.js", "Express", 
-    "MongoDB", "Git", "Figma", "UI/UX Design"
+    "Next.js", "Tailwind CSS", "SQL", 
+    "Git", "Figma", "UI/UX Design"
   ];
 
   return (
@@ -122,10 +122,19 @@ const AboutSection: React.FC = () => {
                     : 'border-portfolio-teal'
               }`}></div>
               <img 
-                src="/lovable-uploads/f5fc9d04-87c1-4eae-b508-3d9cf9ad0459.png" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
                 alt="Lokesh Soni" 
                 className="rounded-md relative z-10 w-full h-auto object-cover"
               />
+              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl font-extrabold z-20 ${
+                theme === 'dark' 
+                  ? 'text-white/70' 
+                  : theme === 'creative' 
+                    ? 'text-fuchsia-600/70' 
+                    : 'text-portfolio-teal/70'
+              }`}>
+                LS
+              </div>
             </div>
           </div>
         </div>
