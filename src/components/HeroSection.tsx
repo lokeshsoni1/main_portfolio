@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
   
   const [typedText, setTypedText] = useState('');
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const phrases = ['Developer', 'Designer', 'Creator', 'Problem Solver'];
+  const phrases = ['Developer', 'Designer', 'Video Editor', 'UI/UX Expert'];
   
   // Typing animation effect
   useEffect(() => {
@@ -103,7 +103,7 @@ const HeroSection: React.FC = () => {
       
       // Different colors based on theme
       if (theme === 'dark') {
-        shape.style.background = `rgba(${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 100)}, ${Math.floor(Math.random() * 100 + 155)}, 0.2)`;
+        shape.style.background = `rgba(${Math.floor(Math.random() * 100 + 155)}, ${Math.floor(Math.random() * 50)}, ${Math.floor(Math.random() * 155 + 100)}, 0.2)`;
       } else if (theme === 'creative') {
         shape.style.background = `linear-gradient(135deg, rgba(${Math.floor(Math.random() * 100 + 155)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 255)}, 0.3), rgba(${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 100)}, ${Math.floor(Math.random() * 255)}, 0.3))`;
       } else {
@@ -145,7 +145,7 @@ const HeroSection: React.FC = () => {
       id="home" 
       className={`relative min-h-screen flex flex-col justify-center py-16 px-6 overflow-hidden ${
         theme === 'dark' 
-          ? 'bg-gray-900 text-white' 
+          ? 'bg-[#1A1F2C] text-white' 
           : theme === 'creative' 
             ? 'bg-gradient-to-br from-indigo-50 to-purple-100' 
             : 'bg-portfolio-lightGray'
@@ -158,7 +158,7 @@ const HeroSection: React.FC = () => {
         <div className="lg:w-1/2 space-y-8">
           <p className={`font-medium mb-2 reveal ${
             theme === 'dark' 
-              ? 'text-teal-400' 
+              ? 'text-pink-400' 
               : theme === 'creative' 
                 ? 'text-fuchsia-500' 
                 : 'text-portfolio-teal'
@@ -184,7 +184,7 @@ const HeroSection: React.FC = () => {
             I'm a{' '}
             <span className={`ml-2 typing-text ${
               theme === 'dark' 
-                ? 'text-teal-400' 
+                ? 'text-pink-400' 
                 : theme === 'creative' 
                   ? 'text-fuchsia-500' 
                   : 'text-portfolio-teal'
@@ -200,14 +200,14 @@ const HeroSection: React.FC = () => {
                 ? 'text-gray-700' 
                 : 'text-portfolio-slate'
           }`} ref={descriptionRef}>
-            I'm a frontend developer specializing in building exceptional digital experiences. Currently, I'm focused on creating accessible, human-centered products.
+            I specialize in creating engaging digital experiences through web development, UI/UX design, and video editing. My goal is to deliver exceptional quality work that exceeds client expectations.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4 reveal" ref={ctaRef}>
             <Button 
               className={`py-6 px-8 text-lg ${
                 theme === 'dark' 
-                  ? 'bg-teal-500 text-gray-900 hover:bg-teal-400' 
+                  ? 'bg-purple-600 text-white hover:bg-purple-500' 
                   : theme === 'creative' 
                     ? 'bg-gradient-to-r from-fuchsia-500 to-indigo-500 text-white hover:bg-opacity-90' 
                     : 'bg-portfolio-teal text-portfolio-navy hover:bg-opacity-80'
@@ -220,7 +220,7 @@ const HeroSection: React.FC = () => {
               variant="outline"
               className={`py-6 px-8 text-lg ${
                 theme === 'dark' 
-                  ? 'border-teal-500 text-teal-400 hover:bg-gray-800' 
+                  ? 'border-pink-500 text-pink-400 hover:bg-gray-800' 
                   : theme === 'creative' 
                     ? 'border-fuchsia-500 text-fuchsia-700 hover:bg-purple-50' 
                     : 'border-portfolio-teal text-portfolio-teal hover:bg-portfolio-teal/10'
@@ -239,13 +239,13 @@ const HeroSection: React.FC = () => {
         <div className="lg:w-1/2 flex justify-center">
           <div className={`relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 shadow-lg animate-fadeIn ${
             theme === 'dark' 
-              ? 'border-teal-500 shadow-teal-500/20' 
+              ? 'border-pink-500 shadow-pink-500/20' 
               : theme === 'creative' 
                 ? 'border-fuchsia-400 shadow-fuchsia-400/20' 
                 : 'border-portfolio-teal shadow-portfolio-teal/20'
           }`}>
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" 
+              src="/lovable-uploads/f5fc9d04-87c1-4eae-b508-3d9cf9ad0459.png" 
               alt="Lokesh Soni"
               className="w-full h-full object-cover"
             />

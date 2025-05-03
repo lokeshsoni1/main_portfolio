@@ -19,38 +19,38 @@ const ExperienceSection: React.FC = () => {
   const experiences: Experience[] = [
     {
       id: "experience-1",
-      company: "Tech Corp",
-      position: "Senior Frontend Developer",
+      company: "Freelance",
+      position: "Video Editor",
       duration: "January 2022 - Present",
       description: [
-        "Led the frontend development of a React-based SaaS platform, improving load times by 40% through code optimization",
-        "Collaborated with designers to implement responsive UI components with Tailwind CSS",
-        "Mentored junior developers and conducted code reviews to ensure high-quality deliverables",
-        "Implemented CI/CD pipelines with GitHub Actions, reducing deployment time by 50%"
+        "Created and edited professional videos for various clients including product promotions and social media content",
+        "Implemented advanced transitions, color grading and special effects to enhance video quality",
+        "Delivered projects within tight deadlines while maintaining high quality standards",
+        "Collaborated with clients to understand their vision and requirements for each project"
       ]
     },
     {
       id: "experience-2",
-      company: "Web Solutions",
-      position: "Frontend Developer",
-      duration: "May 2019 - December 2021",
+      company: "Freelance",
+      position: "UI/UX Designer",
+      duration: "May 2021 - Present",
       description: [
-        "Developed and maintained multiple client websites using React, Next.js, and Tailwind CSS",
-        "Converted design mockups into responsive, accessible websites with a focus on performance",
-        "Built reusable component libraries that improved development speed by 30%",
-        "Integrated third-party APIs for payment processing, analytics, and CMS functionality"
+        "Designed user-friendly interfaces for web and mobile applications",
+        "Created wireframes, mockups and prototypes using industry standard tools",
+        "Conducted user research and usability testing to improve design outcomes",
+        "Collaborated with developers to ensure accurate implementation of designs"
       ]
     },
     {
       id: "experience-3",
-      company: "Creative Agency",
-      position: "Web Developer",
-      duration: "June 2016 - April 2019",
+      company: "Freelance",
+      position: "Data Entry Specialist",
+      duration: "June 2020 - December 2021",
       description: [
-        "Created interactive landing pages and marketing sites for high-profile clients",
-        "Maintained and updated existing client websites, adding new features and improving performance",
-        "Collaborated with the creative team to ensure technical feasibility of UI/UX designs",
-        "Implemented tracking and analytics tools to provide clients with actionable insights"
+        "Managed large datasets with high accuracy and attention to detail",
+        "Processed and verified data for various clients across different industries",
+        "Maintained data confidentiality and security protocols",
+        "Improved data entry processes resulting in 30% increase in efficiency"
       ]
     }
   ];
@@ -100,7 +100,7 @@ const ExperienceSection: React.FC = () => {
               : theme === 'creative' 
                 ? 'text-fuchsia-500' 
                 : 'text-portfolio-teal'
-          }>04.</span> Where I've Worked
+          }>04.</span> Freelance Work
         </h2>
         
         <p className={`text-lg max-w-3xl mb-12 experience-reveal ${
@@ -110,7 +110,7 @@ const ExperienceSection: React.FC = () => {
               ? 'text-gray-700' 
               : 'text-portfolio-slate'
         }`}>
-          My professional journey has equipped me with a diverse skill set and experience working in various environments.
+          My freelance journey has equipped me with diverse skills and experience working with various clients globally.
         </p>
         
         <div className="experience-reveal">
@@ -133,13 +133,13 @@ const ExperienceSection: React.FC = () => {
                   value={exp.id}
                   className={
                     theme === 'dark' 
-                      ? 'data-[state=active]:bg-teal-900/40 data-[state=active]:text-teal-400' 
+                      ? 'data-[state=active]:bg-purple-900/40 data-[state=active]:text-pink-400' 
                       : theme === 'creative' 
                         ? 'data-[state=active]:bg-fuchsia-100 data-[state=active]:text-fuchsia-700' 
                         : 'data-[state=active]:bg-portfolio-teal/10 data-[state=active]:text-portfolio-teal'
                   }
                 >
-                  {exp.company}
+                  {exp.position}
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -148,7 +148,7 @@ const ExperienceSection: React.FC = () => {
               <TabsContent key={exp.id} value={exp.id}>
                 <Card className={`p-6 shadow-md ${
                   theme === 'dark' 
-                    ? 'bg-gray-800 border-l-4 border-teal-500' 
+                    ? 'bg-gray-800 border-l-4 border-pink-500' 
                     : theme === 'creative' 
                       ? 'bg-white border-l-4 border-fuchsia-400 shadow-purple-200/30' 
                       : 'border-l-4 border-portfolio-teal'
@@ -164,7 +164,7 @@ const ExperienceSection: React.FC = () => {
                   </h3>
                   <p className={
                     theme === 'dark' 
-                      ? 'text-teal-400 mb-4' 
+                      ? 'text-pink-400 mb-4' 
                       : theme === 'creative' 
                         ? 'text-fuchsia-500 mb-4' 
                         : 'text-portfolio-teal mb-4'
@@ -175,7 +175,7 @@ const ExperienceSection: React.FC = () => {
                       <li key={i} className="flex items-start">
                         <span className={
                           theme === 'dark' 
-                            ? 'text-teal-400 mr-2' 
+                            ? 'text-pink-400 mr-2' 
                             : theme === 'creative' 
                               ? 'text-fuchsia-500 mr-2' 
                               : 'text-portfolio-teal mr-2'
@@ -202,7 +202,7 @@ const ExperienceSection: React.FC = () => {
             target="_blank" 
             className={`inline-flex items-center ${
               theme === 'dark' 
-                ? 'text-teal-400 hover:text-teal-300' 
+                ? 'text-pink-400 hover:text-pink-300' 
                 : theme === 'creative' 
                   ? 'text-fuchsia-600 hover:text-fuchsia-700' 
                   : 'text-portfolio-teal hover:text-portfolio-teal/80'

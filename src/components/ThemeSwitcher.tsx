@@ -26,7 +26,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = '' }) => {
       <Button
         size="sm"
         variant={theme === 'dark' ? 'default' : 'outline'}
-        className={`rounded-full ${theme === 'dark' ? 'bg-portfolio-teal text-portfolio-navy' : ''}`}
+        className={`rounded-full ${theme === 'dark' ? 'bg-purple-600 text-white' : ''}`}
         onClick={() => setTheme('dark')}
         title="Dark Theme"
       >
@@ -36,7 +36,7 @@ const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className = '' }) => {
       <Button
         size="sm"
         variant={theme === 'creative' ? 'default' : 'outline'}
-        className={`rounded-full ${theme === 'creative' ? 'bg-portfolio-teal text-portfolio-navy' : ''}`}
+        className={`rounded-full ${theme === 'creative' ? 'bg-fuchsia-500 text-white' : ''}`}
         onClick={() => setTheme('creative')}
         title="Creative Theme"
       >

@@ -17,23 +17,14 @@ const SkillsSection: React.FC = () => {
     { name: 'CSS', percentage: 85, color: '#1572B6' },
     { name: 'JavaScript', percentage: 90, color: '#F7DF1E' },
     { name: 'React', percentage: 85, color: '#61DAFB' },
-    { name: 'TypeScript', percentage: 80, color: '#3178C6' },
-  ];
-  
-  const backendSkills: Skill[] = [
-    { name: 'Node.js', percentage: 80, color: '#339933' },
-    { name: 'Express', percentage: 75, color: '#000000' },
-    { name: 'MongoDB', percentage: 70, color: '#47A248' },
-    { name: 'REST API', percentage: 85, color: '#0096c7' },
-    { name: 'SQL', percentage: 70, color: '#4479A1' },
   ];
   
   const otherSkills: Skill[] = [
+    { name: 'SQL', percentage: 70, color: '#4479A1' },
     { name: 'Git', percentage: 85, color: '#F05032' },
     { name: 'UI/UX Design', percentage: 80, color: '#FF7A59' },
-    { name: 'Agile', percentage: 75, color: '#83B81A' },
-    { name: 'Testing', percentage: 65, color: '#9F44D3' },
-    { name: 'DevOps', percentage: 60, color: '#0072C6' },
+    { name: 'Video Editing', percentage: 88, color: '#9F44D3' },
+    { name: 'Data Entry', percentage: 95, color: '#0072C6' },
   ];
 
   useEffect(() => {
@@ -86,21 +77,16 @@ const SkillsSection: React.FC = () => {
         </h2>
         
         <p className="text-lg text-portfolio-slate dark:text-gray-300 creative:text-gray-700 max-w-3xl mb-12 skill-reveal">
-          I've worked with a variety of technologies in the web development world. Here's a glimpse into my technical expertise.
+          I've worked with a variety of technologies and skills. Here's a glimpse into my expertise.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="skill-reveal">
             <h3 className="text-xl font-bold mb-6 text-portfolio-navy dark:text-white creative:text-indigo-600">Frontend Development</h3>
             {frontendSkills.map((skill, index) => renderSkill(skill, index))}
           </div>
           
           <div className="skill-reveal" style={{ transitionDelay: '200ms' }}>
-            <h3 className="text-xl font-bold mb-6 text-portfolio-navy dark:text-white creative:text-indigo-600">Backend Development</h3>
-            {backendSkills.map((skill, index) => renderSkill(skill, index))}
-          </div>
-          
-          <div className="skill-reveal" style={{ transitionDelay: '400ms' }}>
             <h3 className="text-xl font-bold mb-6 text-portfolio-navy dark:text-white creative:text-indigo-600">Other Skills</h3>
             {otherSkills.map((skill, index) => renderSkill(skill, index))}
           </div>

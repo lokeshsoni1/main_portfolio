@@ -44,7 +44,6 @@ const Index: React.FC = () => {
         <ScrollToTop />
         <Toaster />
         
-        {/* Add theme-specific CSS */}
         <style jsx global>{`
           /* Common animation styles */
           .typing-text {
@@ -85,12 +84,12 @@ const Index: React.FC = () => {
           
           /* Theme-specific styles */
           body.dark {
-            background-color: #111827; /* gray-900 */
+            background-color: #1A1F2C;
             color: white;
           }
           
           body.creative {
-            background-color: #ffffff;
+            background: linear-gradient(to right, #fdfbfb 0%, #ebedee 100%);
             color: #1e1b4b;
           }
           
