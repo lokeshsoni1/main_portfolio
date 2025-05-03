@@ -28,11 +28,11 @@ const TestimonialsSection: React.FC = () => {
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Rajesh Gupta",
       role: "Startup Founder",
-      company: "TechFlow",
-      text: "Working with Lokesh on our UI/UX design was a fantastic experience. He understood our vision perfectly and delivered designs that were both beautiful and functional. Our users love the new interface!",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+      company: "TechNovate",
+      text: "Bhai kya UI/UX design banaya hai! Ekdum zabardast work kiya Lokesh ne. Humara app pehle boring lag raha tha, par ab ekdum fresh and modern dikhta hai. Clients ne bhi bahut tareef ki. Next project ke liye pakka tumhe hi contact karunga!",
+      image: "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
     },
     {
       id: 3,
@@ -44,11 +44,11 @@ const TestimonialsSection: React.FC = () => {
     },
     {
       id: 4,
-      name: "David Kim",
+      name: "Ankit Sharma",
       role: "Content Creator",
-      company: "Visual Media",
-      text: "The video editing work Lokesh did for my YouTube channel transformed my content. His creative transitions and perfect timing sense made my videos much more engaging. My subscriber count has grown by 40% since working with him!",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+      company: "DigiMedia",
+      text: "Lokesh bhai ke video editing skills mast hai! Maine unse apne YouTube channel ke videos edit karwaye aur subscribers double ho gaye 2 mahine mein. Timepass transitions nahi, ekdum professional quality work karte hain. Cost bhi reasonable. Highly recommended!",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
     }
   ];
 

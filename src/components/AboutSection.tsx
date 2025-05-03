@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
   }, []);
 
   const skills = [
-    "HTML", "CSS", "JavaScript", "TypeScript", "React", 
+    "HTML", "CSS", "JavaScript", "React", 
     "Next.js", "Tailwind CSS", "Node.js", "Express", 
     "MongoDB", "Git", "Figma", "UI/UX Design"
   ];
@@ -70,7 +70,7 @@ const AboutSection: React.FC = () => {
                     ? 'text-gray-700' 
                     : 'text-portfolio-slate'
               }`}>
-                Hello! My name is Lokesh, and I enjoy creating things that live on the internet. My interest in web development started back in 2015 when I decided to try customizing a Tumblr theme — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!
+                Hello! My name is Lokesh Soni, and I love creating things that live on the internet.
               </p>
               
               <p className={`text-lg about-reveal delay-200 ${
@@ -80,17 +80,7 @@ const AboutSection: React.FC = () => {
                     ? 'text-gray-700' 
                     : 'text-portfolio-slate'
               }`}>
-                Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, and a large corporation. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
-              </p>
-              
-              <p className={`text-lg about-reveal delay-300 ${
-                theme === 'dark' 
-                  ? 'text-gray-300' 
-                  : theme === 'creative' 
-                    ? 'text-gray-700' 
-                    : 'text-portfolio-slate'
-              }`}>
-                I also recently launched a course that covers everything you need to build a web app with the MERN stack.
+                Fast-forward to today, I'm currently a first-year Computer Science and Engineering student at Dronacharya College. Along with web development, I specialize in video editing and UI/UX design using Figma. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
               </p>
               
               <div className="about-reveal delay-400">
@@ -132,8 +122,8 @@ const AboutSection: React.FC = () => {
                     : 'border-portfolio-teal'
               }`}></div>
               <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" 
-                alt="Lokesh working on code" 
+                src="/lovable-uploads/f5fc9d04-87c1-4eae-b508-3d9cf9ad0459.png" 
+                alt="Lokesh Soni" 
                 className="rounded-md relative z-10 w-full h-auto object-cover"
               />
             </div>

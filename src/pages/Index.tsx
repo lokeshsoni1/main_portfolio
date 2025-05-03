@@ -35,8 +35,8 @@ const Index: React.FC = () => {
         <Navbar />
         <HeroSection />
         <AboutSection />
-        <SkillsSection />
         <ProjectsSection />
+        <SkillsSection />
         <ExperienceSection />
         <TestimonialsSection />
         <ContactSection />
@@ -44,7 +44,8 @@ const Index: React.FC = () => {
         <ScrollToTop />
         <Toaster />
         
-        <style jsx global>{`
+        <style jsx global>
+          {`
           /* Common animation styles */
           .typing-text {
             display: inline-block;
@@ -104,7 +105,8 @@ const Index: React.FC = () => {
             opacity: 1;
             transform: translateY(0);
           }
-        `}</style>
+          `}
+        </style>
       </div>
     </ThemeProvider>
   );

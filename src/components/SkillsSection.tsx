@@ -23,8 +23,6 @@ const SkillsSection: React.FC = () => {
     { name: 'SQL', percentage: 70, color: '#4479A1' },
     { name: 'Git', percentage: 85, color: '#F05032' },
     { name: 'UI/UX Design', percentage: 80, color: '#FF7A59' },
-    { name: 'Video Editing', percentage: 88, color: '#9F44D3' },
-    { name: 'Data Entry', percentage: 95, color: '#0072C6' },
   ];
 
   useEffect(() => {

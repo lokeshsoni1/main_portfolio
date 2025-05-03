@@ -103,7 +103,7 @@ const ContactSection: React.FC = () => {
               ? 'text-gray-700' 
               : 'text-portfolio-slate'
         }`}>
-          I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll do my best to get back to you!
+          Need any help? Have a question? Or just want to say hi? I'm here to help and would love to hear from you!
         </p>
         
         <div className="flex flex-col lg:flex-row gap-12">
@@ -248,7 +248,7 @@ const ContactSection: React.FC = () => {
                           : 'text-portfolio-navy'
                     }`}>Email</h4>
                     <a 
-                      href="mailto:hello@lokeshsoni.com" 
+                      href="mailto:lokeshsoniroyal1@gmail.com" 
                       className={`${
                         theme === 'dark' 
                           ? 'text-gray-300 hover:text-teal-400' 
@@ -257,7 +257,7 @@ const ContactSection: React.FC = () => {
                             : 'text-portfolio-slate hover:text-portfolio-teal'
                       } transition-colors`}
                     >
-                      hello@lokeshsoni.com
+                      lokeshsoniroyal1@gmail.com
                     </a>
                   </div>
                 </div>
@@ -279,7 +279,7 @@ const ContactSection: React.FC = () => {
                           : 'text-portfolio-navy'
                     }`}>Phone</h4>
                     <a 
-                      href="tel:+1234567890" 
+                      href="tel:+918595598458" 
                       className={`${
                         theme === 'dark' 
                           ? 'text-gray-300 hover:text-teal-400' 
@@ -288,7 +288,7 @@ const ContactSection: React.FC = () => {
                             : 'text-portfolio-slate hover:text-portfolio-teal'
                       } transition-colors`}
                     >
-                      +1 (234) 567-890
+                      +91 8595598458
                     </a>
                   </div>
                 </div>
@@ -316,7 +316,7 @@ const ContactSection: React.FC = () => {
                           ? 'text-gray-700' 
                           : 'text-portfolio-slate'
                     }>
-                      San Francisco, California, USA
+                      Gurugram, Haryana, India
                     </p>
                   </div>
                 </div>

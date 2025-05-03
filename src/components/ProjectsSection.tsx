@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -26,46 +25,35 @@ const ProjectsSection: React.FC = () => {
   const projects: Project[] = [
     {
       id: "project1",
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce application with user authentication, product catalog, cart functionality, and payment integration using Stripe.",
-      longDescription: "This comprehensive e-commerce platform was built from the ground up to provide a seamless shopping experience. Features include user authentication with multiple roles, a dynamic product catalog with filtering and search capabilities, an intuitive cart system with persistent storage, and secure payment processing through Stripe integration. The admin dashboard provides powerful tools for inventory management, order processing, and analytics tracking. The responsive design ensures a great user experience across all devices, while optimized image loading and code splitting techniques maintain fast page load times even on slower connections.",
-      image: "https://images.unsplash.com/photo-1509395452344-005c7d74c555?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe", "Redux", "JWT"],
-      demoUrl: "https://demo.com",
-      githubUrl: "https://github.com",
+      title: "Simple Calculator (Python)",
+      description: "Created a basic calculator using Python that can perform addition, subtraction, multiplication, and division.",
+      longDescription: "This Python calculator was one of my first programming projects. It features a simple command-line interface that allows users to perform basic arithmetic operations. The application handles input validation, preventing errors from invalid inputs, and includes a memory function to store previous results. Despite its simplicity, this project helped me understand fundamental programming concepts like functions, conditional statements, and user input handling in Python.",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+      technologies: ["Python", "Command Line", "Arithmetic Logic"],
+      demoUrl: "https://github.com/lokeshsoni",
+      githubUrl: "https://github.com/lokeshsoni",
       featured: true
     },
     {
       id: "project2",
-      title: "Task Management App",
-      description: "A responsive task management application with drag-and-drop interfaces, task categorization, and real-time updates.",
-      longDescription: "This task management application helps teams collaborate effectively with intuitive drag-and-drop interfaces and real-time updates. The app features customizable boards and columns, detailed task cards with comments and attachments, deadline notifications, and comprehensive progress tracking. Team collaboration is enhanced through permission controls, activity logs, and @ mentions. The application was designed with a focus on performance, implementing optimistic UI updates and efficient state management to ensure smooth operation even with hundreds of tasks.",
-      image: "https://images.unsplash.com/photo-1496059356248-96a5466d847d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80",
-      technologies: ["React", "Firebase", "Tailwind CSS", "dnd-kit", "TypeScript"],
-      demoUrl: "https://demo.com",
-      githubUrl: "https://github.com",
+      title: "Portfolio Website",
+      description: "This portfolio website is my first front-end web development project to showcase my skills and learning journey.",
+      longDescription: "This portfolio website represents my journey into front-end web development. Built with React and Tailwind CSS, it features a responsive design, theme switching capability, and smooth animations. The site includes sections for showcasing my projects, skills, and testimonials from clients. Building this portfolio helped me understand component-based architecture, responsive design principles, and how to create engaging user interfaces. The theme switching feature demonstrates my understanding of React context and state management.",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+      technologies: ["React", "Tailwind CSS", "JavaScript", "HTML"],
+      demoUrl: "https://github.com/lokeshsoni",
+      githubUrl: "https://github.com/lokeshsoni",
       featured: true
     },
     {
       id: "project3",
-      title: "Weather Dashboard",
-      description: "An interactive weather dashboard that displays current and forecasted weather data using OpenWeatherMap API with location search.",
-      longDescription: "This weather dashboard provides comprehensive weather information with a beautiful, intuitive interface. Users can search for locations worldwide, view detailed current conditions, and check hourly and 7-day forecasts. The application features interactive charts for temperature, precipitation, and wind trends, as well as customizable units (Celsius/Fahrenheit) and themes. Weather alerts and notifications can be enabled for severe weather conditions. The progressive web app capabilities allow offline access to previously viewed forecasts, while geolocation integration provides instant local weather data.",
-      image: "https://images.unsplash.com/photo-1542435593-5aafa45744cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-      technologies: ["React", "TypeScript", "Chart.js", "API Integration", "PWA"],
-      demoUrl: "https://demo.com",
-      githubUrl: "https://github.com",
-      featured: false
-    },
-    {
-      id: "project4",
-      title: "Fitness Tracker",
-      description: "A comprehensive fitness tracking app that allows users to record workouts, track progress, and set fitness goals.",
-      longDescription: "This fitness tracking application helps users achieve their health and fitness goals through detailed workout logging, progress visualization, and personalized recommendations. Users can create custom workout routines, track sets, reps, and weights, and view their progress through interactive charts and graphs. The app includes a built-in exercise library with instructional videos, body measurement tracking, and achievement badges for motivation. Social features allow users to connect with friends, share achievements, and participate in challenges. A nutrition tracker component helps users maintain a balanced diet alongside their fitness routine.",
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-      technologies: ["React Native", "Firebase", "Redux", "ChartJS", "NodeJS"],
-      demoUrl: "https://demo.com",
-      githubUrl: "https://github.com",
+      title: "Milk Planner",
+      description: "It is a web app to track daily milk usage, delivery, and total cost efficiently & print the Monthly Bill.",
+      longDescription: "The Milk Planner is a practical web application designed to solve a common household problem - tracking milk deliveries and payments. Users can log daily deliveries, record usage, and generate monthly bills. The application calculates costs automatically based on quantity and rates. It features a clean, intuitive interface that makes data entry simple, and a reporting system that provides insights into consumption patterns. This project demonstrates my ability to create practical solutions for everyday problems using web technologies.",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
+      technologies: ["HTML", "CSS", "JavaScript", "Local Storage"],
+      demoUrl: "https://github.com/lokeshsoni",
+      githubUrl: "https://github.com/lokeshsoni",
       featured: false
     }
   ];
